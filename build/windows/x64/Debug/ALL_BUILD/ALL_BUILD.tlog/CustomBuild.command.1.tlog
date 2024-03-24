@@ -1,0 +1,10 @@
+^C:\USERS\91948\DESKTOP\ANDROID STUDIO\JSAP\WINDOWS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/91948/Desktop/Android Studio/JSAP/windows" "-BC:/Users/91948/Desktop/Android Studio/JSAP/build/windows" --check-stamp-file "C:/Users/91948/Desktop/Android Studio/JSAP/build/windows/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

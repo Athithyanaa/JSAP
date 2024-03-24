@@ -1,0 +1,52 @@
+import 'dart:io';
+import 'package:flutter/material.dart';
+
+class UploadSuccessPage extends StatefulWidget {
+  final File imageFile;
+
+  UploadSuccessPage({required this.imageFile});
+
+  @override
+  _UploadSuccessPageState createState() => _UploadSuccessPageState();
+}
+
+class _UploadSuccessPageState extends State<UploadSuccessPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.indigo,
+      appBar: AppBar(
+        backgroundColor: Colors.indigoAccent,
+        title: Text('Upload Success'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.file(
+              widget.imageFile,
+              width: 200,
+              height: 200,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to analysis page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AnalysisPage(
+                      'Test Type',
+                      'Analysis Result',
+                    ),
+                  ),
+                );
+              },
+              child: Text('Analyse Report'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
